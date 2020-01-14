@@ -9,7 +9,9 @@
           </div>
         </div>
       </div>
-      <div class="col-md-5"></div>
+      <div class="col-md-5 my-5">
+        <cart :items="cart"></cart>
+      </div>
     </div>
   </div>
   
@@ -18,11 +20,13 @@
 <script>
 import products from '@/products.json';
 import Product from '@/components/Product.vue';
+import Cart from '@/components/Cart.vue'
 
 export default {
   name: 'app',
   components: {
-    Product
+    Product,
+    Cart
   },
   data(){
     return {
