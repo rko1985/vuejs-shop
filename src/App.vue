@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="col-md-5 my-5">
-        <cart :items="cart" v-on:remove-from-cart="removeFromCart($event)"></cart>
+        <cart v-on:pay="pay()" :items="cart" v-on:remove-from-cart="removeFromCart($event)"></cart>
       </div>
     </div>
   </div>
@@ -49,6 +49,10 @@ export default {
       }
 
       return false
+    },
+    pay(){
+      this.cart = []
+      alert('Shopping completed!')
     }
   }
 
