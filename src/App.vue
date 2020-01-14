@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="col-md-5 my-5">
-        <cart :items="cart"></cart>
+        <cart :items="cart" v-on:remove-from-cart="removeFromCart($event)"></cart>
       </div>
     </div>
   </div>
@@ -37,6 +37,9 @@ export default {
   methods: {
     addToCart(product){
       this.cart.push(product)
+    },
+    removeFromCart(product){
+      this.cart = this.cart.filter(item => item.id !== product.id)
     },
     isInCart(product){
       const item = this.cart.find(item => item.id === product.id)

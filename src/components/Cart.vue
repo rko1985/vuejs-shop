@@ -2,7 +2,7 @@
     <ul class="list-group">
         <li class="list-group-item" v-for="item in items" v-bind:key="item.id">
             {{item.title}} - $ {{item.price}}
-            <button class="btn badge badge-danger float-right">Remove from cart</button>
+            <button class="btn badge badge-danger float-right" @click="$emit('remove-from-cart', item)">Remove from cart</button>
         </li>
     </ul>
 </template>
